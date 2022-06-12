@@ -54,7 +54,6 @@ def nOfPossibleSolutionsRecursive(board,snake,depth,currentSol,allSols,nEv):
     for letter in letters:
         checkSol=currentSol+letter
         nEv[0]+=1
-        # if evaluationFunctionRecursive(board, snake,len(checkSol), checkSol): #for evaluation 1
         if evaluationFunction(board,snake,checkSol):   #for evaluation 2
             if depth==len(checkSol):
                 #If the solution checks with depth then it is a final solution
@@ -81,7 +80,7 @@ board = [4, 3]
 #Cells the snake is occupying, first element is head, latest is tail
 snake =  [[2,2], [3,2], [3,1], [3,0], [2,0], [1,0], [0,0]]
 #Depth of movements the algorithm is going to look for a solution
-depth = 8
+depth = 5
 
 t=time.time()
 finalSol=nOfPossibleSolutions(board,snake,depth)
@@ -94,4 +93,3 @@ print("\nAll solutions: "+finalSol[1].__str__())
 print("\nNumber of possible combinations: "+pow(4,depth).__str__()+"\nNumber of total evaluations: "+finalSol[2][0].__str__())
 print("We are evaluating "+round((finalSol[2][0]*100/pow(4,depth)),2).__str__()+"% of all possible evaluations")
 print("\nExecution time: "+t.__str__()+" seconds")
-
