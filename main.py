@@ -54,7 +54,6 @@ def nOfPossibleSolutionsRecursive(board,snake,depth,currentSol,allSols,nEv):
     for letter in letters:
         checkSol=currentSol+letter
         nEv[0]+=1
-        # if evaluationFunctionRecursive(board, snake,len(checkSol), checkSol): #for evaluation 1
         if evaluationFunction(board,snake,checkSol):   #for evaluation 2
             if depth==len(checkSol):
                 #If the solution checks with depth then it is a final solution
