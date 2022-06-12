@@ -3,7 +3,7 @@
 import numpy as np
 import time
 
-# Evaluates weather a set of movements are valid for a snake in a board
+# Evaluates whether a set of movements are valid for a snake in a board
 # More efficient than evFunRecursive
 def evaluationFunction(board, snake, movements):
     newSnake=np.array(snake)
